@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  springboot_app:
+    build: ./api
+    stdin_open: true
+    tty: true
+    ports:
+      - 8088:8080
+
+#  reactnative_app:
+#    depends_on:
+#      - springboot_app
+#    build: ./mobile
+#    environment:
+#      - NODE_ENV=development
+#      #- EXPO_PACKAGER_PROXY_URL = http://192.168.15.5:19000
+#      #- REACT_NATIVE_PACKAGER_HOSTNAME=192.168.15.5
+#    tty: true
+#    ports:
+#      - '19000:19000'
+#      - '19006:19006'
+#      - '19001:19001'
+#      - '19002:19002'
+#    volumes:
+#      - ./mobile:/opt/mobile/app:delegated
+#      - ./mobile/package.json:/opt/mobile/package.json
+#      - ./mobile/package-lock.json:/opt/mobile/package-lock.json
+#      - nodemodules:/opt/mobile/app/node_modules
+
+#volumes:
+#  nodemodules:
